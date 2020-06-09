@@ -1,7 +1,5 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,8 +10,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/contact','ContactController@index')
+Route::get('/contact','FinalController@index');
+Route::get('/create','FinalController@create');
+Route::post('/store','FinalController@store');
+Route::get('/{contact}/edit','FinalController@edit');
+Route::post('/update/{contact}','FinalController@update');
+Route::delete('delete/{id}','FinalController@destroy');
